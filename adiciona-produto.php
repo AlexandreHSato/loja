@@ -1,24 +1,39 @@
 <html>
-<?php
-$nome = $_GET['nome'];
-$preco = $_GET['preco'];
+	<head>
+		<title>Minha Loja</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/loja.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="principal">
+				<?php
+				$nome = $_GET['nome'];
+				$preco = $_GET['preco'];
 
-$conexao = mysqli_connect("localhost","root","","loja_php");
 
-$query = "INSERT INTO produtos (nome,preco) VALUES ('{$nome}',{$preco});";
+				$conexao = mysqli_connect("localhost","root","","loja_php");
 
-if(mysqli_query($conexao,$query)){
-?>
+				$query = "INSERT INTO produtos (nome,preco) VALUES ('{$nome}',{$preco});";
 
-<p class="alert-success">Produto <?=$nome?>, <?=$preco?> adicionado com sucesso!</p>
+				if(mysqli_query($conexao,$query)){
+				?>
 
-<?php }else{ ?>
+				<p class="alert-success">Produto <?=$nome?>, <?=$preco?> adicionado com sucesso!</p>
 
-<p class="alert-danger">Produto <?=$nome?>, <?=$preco?> adicionado com sucesso!</p>
+				<?php }else{ ?>
 
-<?php
-}
-mysqli_close($conexao);
-?>
+				<p class="alert-danger">Produto <?=$nome?>, <?=$preco?> adicionado com sucesso!</p>
+
+				<?php
+				}
+				mysqli_close($conexao);
+				?>
+
+
+			</div>
+		</div>
+	</body>
 
 </html>
