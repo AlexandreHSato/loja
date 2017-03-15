@@ -1,8 +1,3 @@
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+<?php include("cabecalho.php"); ?>
 <h1>Bem vindo!</h1>
-</body>
-</html>
+<?php include("rodape.php"); ?>
