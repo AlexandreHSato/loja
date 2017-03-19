@@ -19,6 +19,9 @@ include("banco-produto.php");
 	<td>
 		<?=$produto['preco']?>
 	</td>
+	<td>
+		<a href="remove-produto.php?id=<?=$produto['id']?>" class="text-danger">remover</a>
+	</td>
 
 </tr>
 	

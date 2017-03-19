@@ -15,3 +15,12 @@ function inseriProduto($conexao, $nome, $preco){
 	return mysqli_query($conexao,$query);
 
 }
+
+
+function removeProduto($conexao, $id){
+	echo " id:".$id."<br>";
+	echo " id:".$id."<br>";
+	$query = "DELETE FROM produtos WHERE id={$id};";
+	return mysqli_query($conexao,$query);
+
+}
