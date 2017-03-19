@@ -1,21 +1,26 @@
 <?php include("cabecalho.php");?>
 				<?php
+				
+				function inseriProduto($conexao, $nome, $preco){
+					$query = "INSERT INTO produtos (nome,preco) VALUES ('{$nome}',{$preco});";
+					return mysqli_query($conexao,$query);
+
+				}
+
 				$nome = $_GET['nome'];
 				$preco = $_GET['preco'];
-
-
 				$conexao = mysqli_connect("localhost","root","","loja_php");
 
-				$query = "INSERT INTO produtos (nome,preco) VALUES ('{$nome}',{$preco});";
-
-				if(mysqli_query($conexao,$query)){
+				if(inseriProduto($conexao,$nome,$preco)){
 				?>
 
-				<p class="alert-success">Produto <?=$nome?>, <?=$preco?> adicionado com sucesso!</p>
+				<p class="text-success">Produto <?=$nome?>, <?=$preco?> adicionado com sucesso!</p>
 
-				<?php }else{ ?>
+				<?php }else{ 
+					$msg = mysqli_error($conexao);
+				?>
 
-				<p class="alert-danger">Produto <?=$nome?>, <?=$preco?> adicionado com sucesso!</p>
+				<p class="text-danger">Produto <?=$nome?>, <?=$preco?> não foi adicionado: <?= $msg?> </p>
 
 				<?php
 				}
