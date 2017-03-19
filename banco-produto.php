@@ -10,16 +10,15 @@ function listaProdutos($conexao){
 
 }
 
-function inseriProduto($conexao, $nome, $preco,$descricao,$categoria){
-	$query = "INSERT INTO produtos (nome,preco,descricao,categoria_id) VALUES ('{$nome}',{$preco},'{$descricao}',{$categoria});";
+function inseriProduto($conexao, $nome, $preco,$descricao,$categoria,$usado){
+	$query = "INSERT INTO produtos (nome,preco,descricao,categoria_id,usado) VALUES ('{$nome}',{$preco},'{$descricao}',{$categoria},{$usado});";
 	return mysqli_query($conexao,$query);
 
 }
 
 
 function removeProduto($conexao, $id){
-	echo " id:".$id."<br>";
-	echo " id:".$id."<br>";
+	
 	$query = "DELETE FROM produtos WHERE id={$id};";
 	return mysqli_query($conexao,$query);
 
