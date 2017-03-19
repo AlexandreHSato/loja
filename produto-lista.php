@@ -33,6 +33,9 @@ include("banco-produto.php");
 		<?=substr($produto['categoria_nome'],0,40)?>
 	</td>
 	<td>
+		<a class="btn btn-primary" href="produto-altera-formulario.php?id=<?=$produto['id']?>">alterar</a>
+	</td>
+	<td>
 		<form action="remove-produto.php" method="post">
 			<input type="hidden" name="id" value="<?=$produto['id']?>">
 			<button class="btn btn-danger">remover</button>
