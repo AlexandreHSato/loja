@@ -7,9 +7,10 @@
 
 				$nome = $_GET['nome'];
 				$preco = $_GET['preco'];
+				$descricao = $_GET['descricao'];
 				
 
-				if(inseriProduto($conexao,$nome,$preco)){
+				if(inseriProduto($conexao,$nome,$preco,$descricao)){
 				?>
 
 				<p class="text-success">Produto <?=$nome?>, <?=$preco?> adicionado com sucesso!</p>
