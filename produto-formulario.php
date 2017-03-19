@@ -21,7 +21,7 @@
 						</tr>
 						<tr>
 							<td>
-								<input type="submit" value="Cadastrar">
+								<button class="btn btn-primary"  type="submit">Cadastrar</button>
 							</td>
 							
 						</tr>
